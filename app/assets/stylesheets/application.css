@@ -22,7 +22,6 @@
 .logo { margin-top: 15px; }
 span.selecione { color: #999;margin-left: 10px;font-size: 0.9em;}
 .galeria {
-	/*background: aliceblue;*/
 	padding: 15px;
 }
 .container-shadow { box-shadow:0 0 2px 2px #ccc; -moz-box-shadow:0 0 2px 2px #ccc; -webkit-box-shadow:0 0 2px 2px #ccc;  }

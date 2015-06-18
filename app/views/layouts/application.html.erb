@@ -20,26 +20,19 @@
 
       <ul class="menu uk-navbar-nav uk-hidden-small ">
           <li>
-              <%#= link_to "Cadastrar mais", new_image_path, remote: true, class: 'cadastrar_imagem' # remote: true direciona para view js, necessário format.js no controller %> 
               <%= link_to "Cadastrar mais", new_image_path, class: 'cadastrar_imagem' %>
-             <!--  <a href="#cadastro">Cadastrar mais</a> -->
           </li>
-          <!-- <li class="uk-active"> -->
           <li>
               <%= link_to "Ver tudo", images_path, class: 'ver_tudo' %>
-              <!-- <a href="#tudo">Ver tudo</a> -->
           </li>
           <li>
               <%= link_to "Ver arquivos", images_path(filtro: 'files'), class: 'ver_arquivos' %>
-              <!-- <a href="#arquivos">Ver arquivos</a> -->
           </li>
           <li>
               <%= link_to "Ver imagens", images_path(filtro: 'images'), class: 'ver_imagens' %>
-              <!-- <a href="#imagens">Ver imagens</a> -->
           </li>
           <li>
               <%= link_to "Ver vídeos", images_path(filtro: 'videos'), class: 'ver_videos' %>
-              <!-- <a href="#videos">Ver vídeos</a> -->
           </li>
       </ul>
       <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>

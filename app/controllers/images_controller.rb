@@ -28,7 +28,6 @@ class ImagesController < ApplicationController
           render layout: false
         end
       end
-      # format.js
     end
   end
 
@@ -61,7 +60,6 @@ class ImagesController < ApplicationController
       else
         format.html do
           if request.xhr?
-            # render plain: "Erro ao criar o arquivo"
             render partial: "alert"
           else
             flash[:error] = "Erro ao criar o arquivo"
@@ -89,7 +87,6 @@ class ImagesController < ApplicationController
       else
         format.html do
           if request.xhr?
-            # render plain: "Erro ao criar o arquivo"
             render partial: "alert"
           else
             flash[:error] = "Erro ao criar o arquivo"
