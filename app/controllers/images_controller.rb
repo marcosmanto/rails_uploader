@@ -50,7 +50,8 @@ class ImagesController < ApplicationController
     respond_to do |format|
       if @image.save
         format.html do
-          if request.xhr?
+          # a verificação do parâmetro adicionado na requisição ajax garante o retorno correto no ie explorer
+          if request.xhr? || params[:xhr]
              render plain: "Arquivo criado com sucesso"
           else
             redirect_to images_path, notice: 'Image was successfully created.'

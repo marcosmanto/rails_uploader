@@ -100,7 +100,11 @@ $(function(){
       	bar         = progressbar.find('.uk-progress-bar');
     var filename_span = $(".filename");
   	$(this).ajaxSubmit({
-  		data: {acao: "cadastro"},
+  		// no ie 9 request.xhr? retorna nil (false). Por isso o controller retorna
+  		// com fosse requisição http, renderizando a index.
+  		// para contornar, adicione qualquer atributo na requisição e verifique sua existência no controller
+  		// assim mesmo se request.xhr? falhar o parâmetro será passado se a requisição for ajax
+  		data: {acao: "cadastro",xhr: true},
       beforeSubmit: function() {
       	debugger_span.fadeIn(1000);
       	debugger_span.removeClass().addClass('uk-alert').empty().html('<img src="<%= asset_path("load.gif") %>" width="20" alt="Aguarde carregamento..." title="Aguarde carregamento...">&nbsp;&nbsp;Aguarde carregamento... ');
