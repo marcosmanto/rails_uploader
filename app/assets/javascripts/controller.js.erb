@@ -94,7 +94,8 @@ $(function(){
 		return false;	
 	});
 
-  $('.modal').on('submit','form[name="uploader"]', function(){
+  $('body').on('submit','form[name="uploader"]', function(){
+  	debugger;
   	var debugger_span = $('#debug');
   	var progressbar = $("#progressbar"),
       	bar         = progressbar.find('.uk-progress-bar');
