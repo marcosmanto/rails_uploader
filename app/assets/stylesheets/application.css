@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require uikit.gradient.min
+ *= require components/upload.gradient.min.css
+ *= require components/placeholder.gradient.min.css
+ *= require components/form-file.gradient.min.css
+ *= require components/progress.gradient.min.css
+ *= require shadowbox/shadowbox.css
+ *= require_self
+ */
+
+.logo { margin-top: 15px; }
+span.selecione { color: #999;margin-left: 10px;font-size: 0.9em;}
+.galeria {
+	/*background: aliceblue;*/
+	padding: 15px;
+}
+.container-shadow { box-shadow:0 0 2px 2px #ccc; -moz-box-shadow:0 0 2px 2px #ccc; -webkit-box-shadow:0 0 2px 2px #ccc;  }
+.loading { padding:25px; display: none;}
+
+/*MANAGE*/
+.lista .li-box:hover{border:4px solid #2B619C; margin:0;}
+.lista .li-box{position:relative; margin:4px; min-height: 320px;}
+.lista .li-box .desc{color:#999;}
+.lista .li-box .data{color:#CCC;}
+.lista .li-box img{margin-bottom:5px;}
+.lista .li-box h2{font:26px;}
+.lista .li-box .manage{right:0px; bottom:0px; position:absolute; background:rgba(102,102,102,0.5); display:none;}
+.lista .li-box .manage{text-align:center;}
+.lista .li-box .manage a{margin:0; float:left;}
+.lista .li-box .manage img{margin:0; padding:5px;}
+.lista .li-box .manage img:hover{background:#2E6294;}
+.lista .li-box:hover .manage{display:block;}
+
+/*MODAL*/
+.modal{position:fixed; z-index:99; width:500px; left:50%; top:30%;padding:25px; background:#FFF; margin-left:-264px; margin-top:-170px; display: none;}
+.modal{box-shadow:0 0 2px 2px #ccc; -moz-box-shadow:0 0 2px 2px #ccc; -webkit-box-shadow:0 0 2px 2px #ccc;}
+.modal .closemodal{position:absolute; right:25px; bottom:1px; text-decoration:none; color:#999; font-size:12px;}
+.modal .closemodal:hover{color:#900;}
+.modal .carregando{position:absolute; height:286px; top:78px;}
+.modal .carregando .progress{padding:134px 5px;}

@@ -1,0 +1,17 @@
+<!-- 
+<a href="" class="uk-alert-close uk-close"></a>
+-->
+<% if @image.errors.any? %>
+  <%= javascript_tag do -%>
+    $('#debug').removeClass('uk-hidden');
+  <%- end -%>
+  <strong><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</strong>
+  <p id="error_explanation">
+    <ul style="list-style-type: disc;">
+    <% @image.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </p>
+<% end %>
+<p class="msg"></p>

@@ -1,0 +1,32 @@
+ <% @images.each do |image| %>
+  <li class="file j_<%= image.id %>">
+    <div class="li-box">
+      <% if image.tipo == "images" %>
+        <img src="<%= image.asset.thumb %>" alt="Baixar arquivo" title="Baixar Arquivo" width="273" height="120" />
+      <% elsif image.tipo == "videos" %>
+        <img src="<%= asset_path 'videothumb.jpg' %>" alt="Baixar arquivo" title="Baixar Arquivo" width="273" height="120" />
+      <% else %>
+        <img src="<%= asset_path 'filethumb.jpg' %>" alt="Baixar arquivo" title="Baixar Arquivo" width="273" height="120" />
+      <% end %>
+        <h2><%= image.title %></h2>
+        <p class="desc"><%= image.description %></p>
+        <p class="data"><%= image.created_at.localtime.strftime("Enviado em: %d/%m/%Y às %I:%M%p") %></p>
+        <p><a class="uk-button" href="<%= image.asset %>" 
+          <%= raw(
+              if image.tipo == "images"
+                'rel="shadowbox"'
+              elsif image.tipo == "video"
+                'rel="shadowbox;width=853;height=480"'
+              end
+            )
+          -%> >Veja isto!</a></p>
+        <div class="manage">
+          <a class="actionedit <%= image.id %>" href="/images/<%= image.id %>/edit"><img src="<%= asset_path('edit.png') %>" alt="" title="" /></a>
+          <%= link_to image_delete_path(image), class: "actiondelete #{image.id}" do %>
+            <img src="<%= asset_path('delete.png') %>" alt="" title="" />
+          <% end -%>
+<!--           <a class="actiondelete" href="/images/<%#= image.id %>"><img src="<%#= asset_path('delete.png') %>" alt="" title="" /></a> -->
+        </div>
+      </div>
+  </li>
+<% end %>

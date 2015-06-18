@@ -1,0 +1,32 @@
+<div class="<%= request.xhr? ? 'uk-width-1-1' : 'uk-width-8-10 uk-push-1-10' %>">
+	<div class="uk-panel uk-panel-header uk-panel-box uk-text-left">
+	  <h3 class="uk-panel-title">Alterar arquivo ou imagem</h3>
+	  <% if @image.tipo == 'images' %>
+		  <div class="uk-panel uk-panel-box uk-text-center uk-width-2-3 uk-align-center">
+		    <div class="uk-panel-teaser">
+		        <%= image_tag @image.asset.thumb %>
+		    </div>
+		    <p><%= File.basename(@image.asset.path) %></p>
+			</div>	    
+	  <% end %>  
+
+	  <% if flash[:error] %>
+		  <div id="debug" class="uk-alert uk-alert-danger" data-uk-alert="">
+		    <strong><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</strong>
+			  <p id="error_explanation">
+			    <ul style="list-style-type: disc;">
+			    <% @image.errors.full_messages.each do |message| %>
+			      <li><%= message %></li>
+			    <% end %>
+			    </ul>
+			  </p>
+			 </div>
+		<% end %>
+		<%= render 'form' %>
+	</div>
+</div>
+<% if request.xhr? %>
+	<a href="#" class="closemodal">X FECHAR</a>
+<% end -%>
+<%#= link_to 'Show', @image %>
+<%#= link_to 'Back', images_path %>

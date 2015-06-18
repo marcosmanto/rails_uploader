@@ -1,0 +1,58 @@
+<div id="debug" class="uk-alert uk-hidden" data-uk-alert="">
+  <%#= render 'alert' %>
+</div>
+
+<div id="progressbar" class="uk-progress uk-hidden">
+    <div class="uk-progress-bar" style="width: 0%;"></div>
+</div>
+
+<%= form_for(@image, html: {name: "uploader", class: "uk-form uk-form-stacked"}) do |f| %>
+
+
+  <div class="uk-form-row">
+    <div class="uk-form-file">
+        <button class="uk-button"><%= params[:action] == 'new' ? 'Select' : 'Alterar arquivo' %></button>
+        <%= f.file_field :asset, id: 'upload-select1' %>
+    </div>
+    <span class="filename"></span>                           
+    <span class="selecione">selecione um arquivo para envio.</span>
+  </div>
+  <div class="uk-form-row">
+    <%= f.label :title, 'Título', class: 'uk-form-label' %>
+    <div class="uk-form-controls">
+        <%= f.text_field :title, class: 'uk-width-1-1', placeholder: 'Informe o título' %>
+    </div>
+  </div>
+
+  <div class="uk-form-row">
+      <%= f.label :description, 'Descrição', class: 'uk-form-label' %>
+      <div class="uk-form-controls">
+          <%= f.text_area :description, cols: 100, rows: 9, class: 'uk-width-1-1', placeholder: 'Adicione uma descrição ao arquivo' %>
+      </div>
+  </div>
+<!--
+  <div class="field">
+    <%#= f.label :asset %><br>
+    <%#= f.file_field :asset %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :title %><br>
+    <%#= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :description %><br>
+    <%#= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%#= f.label :tipo %><br>
+    <%#= f.select :tipo, [["imagem","imagem"],["video","video"]] %>
+  </div>
+-->
+  <div class="uk-form-row">
+      <div class="uk-form-controls">
+          <%= f.button class: 'uk-button uk-button-primary' %>
+      </div>
+  </div>
+<% end %>
