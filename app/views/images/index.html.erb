@@ -15,8 +15,9 @@
           <%= raw(
               if image.tipo == "images"
                 'rel="shadowbox"'
-              elsif image.tipo == "video"
-                'rel="shadowbox;width=853;height=480"'
+              elsif image.tipo == "videos"
+                # https://qianflora.wordpress.com/2014/01/15/play-youtube-video-with-shadowbox-on-iphone-and-ipad/
+                'rel="shadowbox;width=853;height=480;player=iframe"'
               end
             )
           -%> >Veja isto!</a></p>
