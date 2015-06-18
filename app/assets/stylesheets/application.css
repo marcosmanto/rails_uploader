@@ -28,8 +28,10 @@ span.selecione { color: #999;margin-left: 10px;font-size: 0.9em;}
 .loading { padding:25px; display: none;}
 
 /*MANAGE*/
-.lista .li-box:hover{border:4px solid #2B619C; margin:0;}
+.lista .li-box:hover{border:4px solid #6F90AD; margin:0; background-color: #F0F8FF;}
 .lista .li-box{position:relative; margin:4px; min-height: 320px;}
+.ie .lista .li-box:hover{border:0px; background-color: #F0F8FF;}
+.ie .lista .li-box{position:relative; margin:0px; min-height: 320px;}
 .lista .li-box .desc{color:#999;}
 .lista .li-box .data{color:#CCC;}
 .lista .li-box img{margin-bottom:5px;}
